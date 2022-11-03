@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-// An enumeration of animals. Start at 1 (0 = uninitialized).
+// An enumeration of books. Start at 1 (0 = uninitialized).
 public enum Book
 {
     // Pets.
