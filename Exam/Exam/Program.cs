@@ -1,4 +1,4 @@
-﻿namespace Exam
+﻿namespace ExamConsole
 {
     internal class Program
     {
@@ -13,7 +13,7 @@
         IMyXmlFile XmlFile { get; set; }
         List<IVictorina> VictorinaList { get; set; }
     }
-    class MyClass1 : IMassiveVictorins
+    class MassiveVictorins : IMassiveVictorins
     {
         public IMyXmlFile XmlFile { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public List<IVictorina> VictorinaList { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -29,13 +29,35 @@
         public void Load();
 
     }
-    class MyClass2 : IVictorina
+    class Victorina : IVictorina
     {
         public IMyXmlFile XmlFile { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Path { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public List<IQuestion> questions { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
+        public Victorina()
+        {
+            Path = "";
+            Name = "";
+            questions = new List<IQuestion>();
+            int i = 0; 
+            while (i < 2) 
+            {
+                questions.Add(new Question());
+                i++;
+            }
+        }
+        public Victorina(string path)
+        {
+            Path = path;
+            questions = new List<IQuestion>();
+            int i = 0;
+            while (i < 2) 
+            {
+                questions.Add(new Question());
+                i++;
+            }
+        }
         public void Load()
         {
             throw new NotImplementedException();
