@@ -1,7 +1,7 @@
-using System.Windows.Forms;
+ï»¿using System.Windows.Forms;
 namespace TextRedactor
 {
-    // êíîïêè îòêðûòü è îòìåíèòü íå ðàáîòàþò
+    // ÐºÐ½Ð¾Ð¿ÐºÐ¸ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ð¸ Ð¾Ñ‚Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ð½Ðµ Ñ€Ð°Ð±Ð¾Ñ‚Ð°ÑŽÑ‚
     public partial class Form1 : Form
     {
         public Form1()
@@ -20,7 +20,7 @@ namespace TextRedactor
 
         }
 
-        private void ôîðìàòToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
@@ -30,13 +30,13 @@ namespace TextRedactor
 
         }
 
-        private void ñîõðàíèòüToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ÑÐ¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             string filename = saveFileDialog1.FileName;
             File.WriteAllText(filename, richTextBox1.Text);
-            MessageBoxShow("Ôàéë ñîõðàíåí!");
+            MessageBoxShow("Ð¤Ð°Ð¹Ð» ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½!");
         }
 
         private void MessageBoxShow(string v)
@@ -44,18 +44,18 @@ namespace TextRedactor
             //throw new NotImplementedException();
         }
 
-        private void îòêðûòüToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             string filename = openFileDialog1.FileName;
             string fileText = File.ReadAllText(filename);
             string richTextBox1 = fileText;
-            MessageBoxShow("Ôàéë îòêðûò!");
+            MessageBoxShow("Ð¤Ð°Ð¹Ð» Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚!");
 
         }
 
-        private void êîïèðîâàòüToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (richTextBox1.TextLength > 0)
             {
@@ -63,7 +63,7 @@ namespace TextRedactor
             }
         }
 
-        private void âñòàâèòüToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Ð²ÑÑ‚Ð°Ð²Ð¸Ñ‚ÑŒToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (richTextBox1.TextLength > 0)
             {
@@ -71,7 +71,7 @@ namespace TextRedactor
             }
         }
 
-        private void âûðåçàòüToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Ð²Ñ‹Ñ€ÐµÐ·Ð°Ñ‚ÑŒToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (richTextBox1.TextLength > 0)
             {
@@ -79,13 +79,13 @@ namespace TextRedactor
             }
         }
 
-        private void íàñòðîéêèØðèôòàToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸Ð¨Ñ€Ð¸Ñ„Ñ‚Ð°ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fontDialog1.ShowDialog();
             richTextBox1.Font = fontDialog1.Font;
         }
 
-        private void íàñòðîéêèÔîíàToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸Ð¤Ð¾Ð½Ð°ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             colorDialog1.ShowDialog();
             richTextBox1.BackColor = colorDialog1.Color;
@@ -93,7 +93,7 @@ namespace TextRedactor
 
 
 
-        //private void ÎòìåíèòüToolStripMenuItem_Click(object sender, EventArgs e)
+        //private void ÐžÑ‚Ð¼ÐµÐ½Ð¸Ñ‚ÑŒToolStripMenuItem_Click(object sender, EventArgs e)
         //{
         //    if (richTextBox1.TextLength > 0)
         //    {
