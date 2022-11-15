@@ -1,4 +1,4 @@
-using System.Windows.Forms;
+п»їusing System.Windows.Forms;
 
 namespace Calendar1
 {
@@ -16,6 +16,6 @@ namespace Calendar1
 
         }
 
-        //не пойму, что писать в коде
+        //РЅРµ РїРѕР№РјСѓ, С‡С‚Рѕ РїРёСЃР°С‚СЊ РІ РєРѕРґРµ
     }
 }   
