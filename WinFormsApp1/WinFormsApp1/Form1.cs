@@ -1,4 +1,4 @@
-namespace WinFormsApp1
+п»їnamespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
@@ -10,7 +10,7 @@ namespace WinFormsApp1
 
         private void ShowMesBox(object sender, EventArgs e)
         {
-            string[] arr = { "Студент: Игорь Бесклеткин", "Предмет: Windows Forms C#", "Группа: ПВ-111" };
+            string[] arr = { "РЎС‚СѓРґРµРЅС‚: РРіРѕСЂСЊ Р‘РµСЃРєР»РµС‚РєРёРЅ", "РџСЂРµРґРјРµС‚: Windows Forms C#", "Р“СЂСѓРїРїР°: РџР’-111" };
             int element = 0;
             string caption;
             int i = 0;
