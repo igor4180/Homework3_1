@@ -13,7 +13,7 @@ namespace HW_SP3
             myObject.Start = Int32.Parse(Console.ReadLine());
             myObject.End = Int32.Parse(Console.ReadLine());
             ParameterizedThreadStart parameterizedThreadStart = new ParameterizedThreadStart(ConsoleWrite);
-            ThreadStart threadStart = new ThreadStart(ConsoleWrite);//применяется к первой задаче
+            ThreadStart threadStart = new ThreadStart(ConsoleWrite);
             Thread thread = new Thread(threadStart);
            
             int i = 0; 
