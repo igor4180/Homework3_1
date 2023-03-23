@@ -4,9 +4,7 @@ using System.ComponentModel;
 
 namespace HW_SP3
 {
-    //Создайте оконное приложение, генерирующее набор простых чисел в диапазоне, указанном пользователем.
-    //Если не указана нижняя граница, поток с стартует с 2.Если не указана верхняя граница, генерирование про-
-    //исходит до завершения приложения.Используйте механизм потоков. Числа должны отображаться в оконном интерфейсе.
+    
     internal class Program
     {
         static void Main(string[] args)
@@ -17,10 +15,7 @@ namespace HW_SP3
             ParameterizedThreadStart parameterizedThreadStart = new ParameterizedThreadStart(ConsoleWrite);
             ThreadStart threadStart = new ThreadStart(ConsoleWrite);//применяется к первой задаче
             Thread thread = new Thread(threadStart);
-            //for (int i = 0; i < myObject.threads.Length; i++)
-            //{
-            //    myObject.threads[i] = new Thread(parameterizedThreadStart);
-            //}
+           
             int i = 0; 
             while (i < myObject.threads.Length)
             {
@@ -28,11 +23,7 @@ namespace HW_SP3
                 Console.Write (i);
                 i++;
             }
-            //for (int i = 0; i < myObject.threads.Length; i++)
-            //{
-            //    myObject.threads[i].Start(myObject);
-            //    myObject.threads[i].Join();
-            //}
+            
             while (i < myObject.threads.Length)
             {
                 myObject.threads[i].Start(myObject);
@@ -43,10 +34,7 @@ namespace HW_SP3
             thread.Priority = ThreadPriority.Lowest;
             thread.Start(myObject);
             thread.Join();
-            //for (int i = 0; i <= 50; i++)
-            //{
-            //    Console.WriteLine("Из основной программы: " + i);
-            //}
+
             do
             {
                 Console.WriteLine("Из основной программы: " + i);
@@ -56,7 +44,7 @@ namespace HW_SP3
         }
         static void ConsoleWrite()
         {
-            Console.WriteLine("Введите число начала массива");//первый вариант вывода заданого диапазона потока
+            Console.WriteLine("Введите число начала массива");
             int istart = Int32.Parse(Console.ReadLine());
             Console.WriteLine("Введите число конца массива");
             int iend = Int32.Parse(Console.ReadLine());
