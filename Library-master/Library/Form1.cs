@@ -1,4 +1,4 @@
-using System.Data;
+п»їusing System.Data;
 using System.Threading.Tasks.Dataflow;
 
 namespace Library
@@ -13,8 +13,8 @@ namespace Library
         private Book bufferBook = new Book();
         private void Form1_Load(object sender, EventArgs e)
         {
-            //dataTable.Columns.Add(new DataColumn("ID", typeof(int))); надо создавать колонки как в таблице на форме
-            //ниже добавление строк в таблице, надо в DataTable
+            //dataTable.Columns.Add(new DataColumn("ID", typeof(int))); РЅР°РґРѕ СЃРѕР·РґР°РІР°С‚СЊ РєРѕР»РѕРЅРєРё РєР°Рє РІ С‚Р°Р±Р»РёС†Рµ РЅР° С„РѕСЂРјРµ
+            //РЅРёР¶Рµ РґРѕР±Р°РІР»РµРЅРёРµ СЃС‚СЂРѕРє РІ С‚Р°Р±Р»РёС†Рµ, РЅР°РґРѕ РІ DataTable
             DataColumn column;
             DataRow row;
             column = new DataColumn();
@@ -40,10 +40,10 @@ namespace Library
             column.ColumnName = "Publisher";
             column = new DataColumn();
 
-            dgv_library.Rows.Add("0", "Война и мир", "Л.Н. Толстой", "роман-эпопея", "1865", "960", "Русский вестник");
-            dgv_library.Rows.Add("1", "Тихий Дон", "М.А. Шолохов", "роман-эпопея", "1940", "1472", "Новый мир");
-            dgv_library.Rows.Add("2", "Приключения Тома Сойера", "М. Твен", "повесть", "1876", "250", "Лабиринт");
-            dgv_library.Rows.Add("3", "Три мушкетера", "А. Дюма", "роман", "1844", "414", "Эксмо");
+            dgv_library.Rows.Add("0", "Р’РѕР№РЅР° Рё РјРёСЂ", "Р›.Рќ. РўРѕР»СЃС‚РѕР№", "СЂРѕРјР°РЅ-СЌРїРѕРїРµСЏ", "1865", "960", "Р СѓСЃСЃРєРёР№ РІРµСЃС‚РЅРёРє");
+            dgv_library.Rows.Add("1", "РўРёС…РёР№ Р”РѕРЅ", "Рњ.Рђ. РЁРѕР»РѕС…РѕРІ", "СЂРѕРјР°РЅ-СЌРїРѕРїРµСЏ", "1940", "1472", "РќРѕРІС‹Р№ РјРёСЂ");
+            dgv_library.Rows.Add("2", "РџСЂРёРєР»СЋС‡РµРЅРёСЏ РўРѕРјР° РЎРѕР№РµСЂР°", "Рњ. РўРІРµРЅ", "РїРѕРІРµСЃС‚СЊ", "1876", "250", "Р›Р°Р±РёСЂРёРЅС‚");
+            dgv_library.Rows.Add("3", "РўСЂРё РјСѓС€РєРµС‚РµСЂР°", "Рђ. Р”СЋРјР°", "СЂРѕРјР°РЅ", "1844", "414", "Р­РєСЃРјРѕ");
         }
 
         private void dgv_library_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -51,17 +51,17 @@ namespace Library
 
         }
 
-        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void СѓРґР°Р»РёС‚СЊToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dgv_library.SelectedRows[0].Index >= 0)
                 dgv_library.Rows.RemoveAt(dgv_library.SelectedRows[0].Index);
         }
 
-        private void редактироватьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void СЂРµРґР°РєС‚РёСЂРѕРІР°С‚СЊToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dgv_library.SelectedRows.Count > 0)
             {
-                //переделать под DataTable
+                //РїРµСЂРµРґРµР»Р°С‚СЊ РїРѕРґ DataTable
                 bufferBook = new Book(
                     Convert.ToInt32(dgv_library.SelectedRows[0].Cells[0].Value.ToString()),
                     dgv_library.SelectedRows[0].Cells[1].Value.ToString(),
@@ -87,12 +87,12 @@ namespace Library
             }
         }
 
-        private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void СЃРѕР·РґР°С‚СЊToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddBook addForm = new AddBook();
             if (addForm.ShowDialog() == DialogResult.OK)
             {
-                //переделать под DataTable
+                //РїРµСЂРµРґРµР»Р°С‚СЊ РїРѕРґ DataTable
                 bufferBook = addForm.AddableBook;
                 dgv_library.Rows.Add(
                 bufferBook.Id,
@@ -107,12 +107,12 @@ namespace Library
 
         private void nameFilterASCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //проходить строки в дата тэйбл и выводить их согласно сортировке
+            //РїСЂРѕС…РѕРґРёС‚СЊ СЃС‚СЂРѕРєРё РІ РґР°С‚Р° С‚СЌР№Р±Р» Рё РІС‹РІРѕРґРёС‚СЊ РёС… СЃРѕРіР»Р°СЃРЅРѕ СЃРѕСЂС‚РёСЂРѕРІРєРµ
         }
 
         private void nameFilterDESCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //проходить строки в дата тэйбл и выводить их согласно сортировке
+            //РїСЂРѕС…РѕРґРёС‚СЊ СЃС‚СЂРѕРєРё РІ РґР°С‚Р° С‚СЌР№Р±Р» Рё РІС‹РІРѕРґРёС‚СЊ РёС… СЃРѕРіР»Р°СЃРЅРѕ СЃРѕСЂС‚РёСЂРѕРІРєРµ
         }
     }
 }
