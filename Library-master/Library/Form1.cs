@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Threading.Tasks.Dataflow;
 
 namespace Library
@@ -15,35 +16,25 @@ namespace Library
         {
             //dataTable.Columns.Add(new DataColumn("ID", typeof(int))); надо создавать колонки как в таблице на форме
             //ниже добавление строк в таблице, надо в DataTable
+            dataTable.Columns.Add();
+            dataTable.Rows.Add();
             DataColumn column;
             DataRow row;
             column = new DataColumn();
             column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = "ID";
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = "Name";
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = "Author";
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = "Genre";
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = "PublishYear";
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = "Pages";
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.Int32");
-            column.ColumnName = "Publisher";
-            column = new DataColumn();
+            DataColumn idColumn = new DataColumn("IdColumn");
+            DataColumn nameColumn = new DataColumn("NameColumn");
+            DataColumn authorColumn = new DataColumn("AuthorColumn");
+            DataColumn genreColumn = new DataColumn("GenreColumn");
+            DataColumn publishYearColumn = new DataColumn("PublishYearColumn");
+            DataColumn pagesColumn = new DataColumn("PagesColumn");
+            DataColumn publisherColumn = new DataColumn("PublisherColumn");
 
-            dgv_library.Rows.Add("0", "Война и мир", "Л.Н. Толстой", "роман-эпопея", "1865", "960", "Русский вестник");
-            dgv_library.Rows.Add("1", "Тихий Дон", "М.А. Шолохов", "роман-эпопея", "1940", "1472", "Новый мир");
-            dgv_library.Rows.Add("2", "Приключения Тома Сойера", "М. Твен", "повесть", "1876", "250", "Лабиринт");
-            dgv_library.Rows.Add("3", "Три мушкетера", "А. Дюма", "роман", "1844", "414", "Эксмо");
+            dataTable.Rows.Add("0", "Война и мир", "Л.Н. Толстой", "роман-эпопея", "1865", "960", "Русский вестник");
+            dataTable.Rows.Add("1", "Тихий Дон", "М.А. Шолохов", "роман-эпопея", "1940", "1472", "Новый мир");
+            dataTable.Rows.Add("2", "Приключения Тома Сойера", "М. Твен", "повесть", "1876", "250", "Лабиринт");
+            dataTable.Rows.Add("3", "Три мушкетера", "А. Дюма", "роман", "1844", "414", "Эксмо");
+            
         }
 
         private void dgv_library_CellContentClick(object sender, DataGridViewCellEventArgs e)
