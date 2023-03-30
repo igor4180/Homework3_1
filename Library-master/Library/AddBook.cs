@@ -13,6 +13,15 @@ namespace Library
     public partial class AddBook : Form
     {
         public Book AddableBook { get; set; }
+
+        public EditBook EditBook
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public AddBook()
         {
             InitializeComponent();

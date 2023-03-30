@@ -39,10 +39,8 @@
             publisher = new DataGridViewTextBoxColumn();
             menuStrip1 = new MenuStrip();
             файлToolStripMenuItem = new ToolStripMenuItem();
-            загрузитьИзБазыToolStripMenuItem = new ToolStripMenuItem();
             загрузитьИзXMLToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator2 = new ToolStripSeparator();
-            сохранитьВБазуToolStripMenuItem = new ToolStripMenuItem();
             сохранитьВXMLToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator1 = new ToolStripSeparator();
             выходToolStripMenuItem = new ToolStripMenuItem();
@@ -59,6 +57,7 @@
             поИздательствуToolStripMenuItem = new ToolStripMenuItem();
             aSCToolStripMenuItem2 = new ToolStripMenuItem();
             dESCToolStripMenuItem2 = new ToolStripMenuItem();
+            справкаToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgv_library).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -90,7 +89,6 @@
             dgv_library.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_library.Size = new Size(800, 426);
             dgv_library.TabIndex = 0;
-            dgv_library.CellContentClick += dgv_library_CellContentClick;
             // 
             // id
             // 
@@ -136,7 +134,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, создатьToolStripMenuItem, редактироватьToolStripMenuItem, удалитьToolStripMenuItem, фильтрToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, создатьToolStripMenuItem, редактироватьToolStripMenuItem, удалитьToolStripMenuItem, фильтрToolStripMenuItem, справкаToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -145,49 +143,39 @@
             // 
             // файлToolStripMenuItem
             // 
-            файлToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { загрузитьИзБазыToolStripMenuItem, загрузитьИзXMLToolStripMenuItem, toolStripSeparator2, сохранитьВБазуToolStripMenuItem, сохранитьВXMLToolStripMenuItem, toolStripSeparator1, выходToolStripMenuItem });
+            файлToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { загрузитьИзXMLToolStripMenuItem, toolStripSeparator2, сохранитьВXMLToolStripMenuItem, toolStripSeparator1, выходToolStripMenuItem });
             файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             файлToolStripMenuItem.Size = new Size(48, 20);
             файлToolStripMenuItem.Text = "Файл";
             // 
-            // загрузитьИзБазыToolStripMenuItem
-            // 
-            загрузитьИзБазыToolStripMenuItem.Name = "загрузитьИзБазыToolStripMenuItem";
-            загрузитьИзБазыToolStripMenuItem.Size = new Size(173, 22);
-            загрузитьИзБазыToolStripMenuItem.Text = "Загрузить из базы";
-            // 
             // загрузитьИзXMLToolStripMenuItem
             // 
             загрузитьИзXMLToolStripMenuItem.Name = "загрузитьИзXMLToolStripMenuItem";
-            загрузитьИзXMLToolStripMenuItem.Size = new Size(173, 22);
+            загрузитьИзXMLToolStripMenuItem.Size = new Size(180, 22);
             загрузитьИзXMLToolStripMenuItem.Text = "Загрузить из XML";
+            загрузитьИзXMLToolStripMenuItem.Click += загрузитьИзXMLToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(170, 6);
-            // 
-            // сохранитьВБазуToolStripMenuItem
-            // 
-            сохранитьВБазуToolStripMenuItem.Name = "сохранитьВБазуToolStripMenuItem";
-            сохранитьВБазуToolStripMenuItem.Size = new Size(173, 22);
-            сохранитьВБазуToolStripMenuItem.Text = "Сохранить в базу";
+            toolStripSeparator2.Size = new Size(177, 6);
             // 
             // сохранитьВXMLToolStripMenuItem
             // 
             сохранитьВXMLToolStripMenuItem.Name = "сохранитьВXMLToolStripMenuItem";
-            сохранитьВXMLToolStripMenuItem.Size = new Size(173, 22);
+            сохранитьВXMLToolStripMenuItem.Size = new Size(180, 22);
             сохранитьВXMLToolStripMenuItem.Text = "Сохранить в XML";
+            сохранитьВXMLToolStripMenuItem.Click += сохранитьВXMLToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(170, 6);
+            toolStripSeparator1.Size = new Size(177, 6);
             // 
             // выходToolStripMenuItem
             // 
             выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            выходToolStripMenuItem.Size = new Size(173, 22);
+            выходToolStripMenuItem.Size = new Size(180, 22);
             выходToolStripMenuItem.Text = "Выход";
             // 
             // создатьToolStripMenuItem
@@ -222,20 +210,20 @@
             // 
             поИмениToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nameFilterASCToolStripMenuItem, nameFilterDESCToolStripMenuItem });
             поИмениToolStripMenuItem.Name = "поИмениToolStripMenuItem";
-            поИмениToolStripMenuItem.Size = new Size(180, 22);
+            поИмениToolStripMenuItem.Size = new Size(164, 22);
             поИмениToolStripMenuItem.Text = "По имени";
             // 
             // nameFilterASCToolStripMenuItem
             // 
             nameFilterASCToolStripMenuItem.Name = "nameFilterASCToolStripMenuItem";
-            nameFilterASCToolStripMenuItem.Size = new Size(180, 22);
+            nameFilterASCToolStripMenuItem.Size = new Size(102, 22);
             nameFilterASCToolStripMenuItem.Text = "ASC";
             nameFilterASCToolStripMenuItem.Click += nameFilterASCToolStripMenuItem_Click;
             // 
             // nameFilterDESCToolStripMenuItem
             // 
             nameFilterDESCToolStripMenuItem.Name = "nameFilterDESCToolStripMenuItem";
-            nameFilterDESCToolStripMenuItem.Size = new Size(180, 22);
+            nameFilterDESCToolStripMenuItem.Size = new Size(102, 22);
             nameFilterDESCToolStripMenuItem.Text = "DESC";
             nameFilterDESCToolStripMenuItem.Click += nameFilterDESCToolStripMenuItem_Click;
             // 
@@ -243,7 +231,7 @@
             // 
             поАвторуToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aSCToolStripMenuItem1, dESCToolStripMenuItem1 });
             поАвторуToolStripMenuItem.Name = "поАвторуToolStripMenuItem";
-            поАвторуToolStripMenuItem.Size = new Size(180, 22);
+            поАвторуToolStripMenuItem.Size = new Size(164, 22);
             поАвторуToolStripMenuItem.Text = "По автору";
             // 
             // aSCToolStripMenuItem1
@@ -251,18 +239,20 @@
             aSCToolStripMenuItem1.Name = "aSCToolStripMenuItem1";
             aSCToolStripMenuItem1.Size = new Size(102, 22);
             aSCToolStripMenuItem1.Text = "ASC";
+            aSCToolStripMenuItem1.Click += aSCToolStripMenuItem1_Click;
             // 
             // dESCToolStripMenuItem1
             // 
             dESCToolStripMenuItem1.Name = "dESCToolStripMenuItem1";
             dESCToolStripMenuItem1.Size = new Size(102, 22);
             dESCToolStripMenuItem1.Text = "DESC";
+            dESCToolStripMenuItem1.Click += dESCToolStripMenuItem1_Click;
             // 
             // поИздательствуToolStripMenuItem
             // 
             поИздательствуToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aSCToolStripMenuItem2, dESCToolStripMenuItem2 });
             поИздательствуToolStripMenuItem.Name = "поИздательствуToolStripMenuItem";
-            поИздательствуToolStripMenuItem.Size = new Size(180, 22);
+            поИздательствуToolStripMenuItem.Size = new Size(164, 22);
             поИздательствуToolStripMenuItem.Text = "По издательству";
             // 
             // aSCToolStripMenuItem2
@@ -270,12 +260,21 @@
             aSCToolStripMenuItem2.Name = "aSCToolStripMenuItem2";
             aSCToolStripMenuItem2.Size = new Size(102, 22);
             aSCToolStripMenuItem2.Text = "ASC";
+            aSCToolStripMenuItem2.Click += aSCToolStripMenuItem2_Click;
             // 
             // dESCToolStripMenuItem2
             // 
             dESCToolStripMenuItem2.Name = "dESCToolStripMenuItem2";
             dESCToolStripMenuItem2.Size = new Size(102, 22);
             dESCToolStripMenuItem2.Text = "DESC";
+            dESCToolStripMenuItem2.Click += dESCToolStripMenuItem2_Click;
+            // 
+            // справкаToolStripMenuItem
+            // 
+            справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            справкаToolStripMenuItem.Size = new Size(65, 20);
+            справкаToolStripMenuItem.Text = "Справка";
+            справкаToolStripMenuItem.Click += справкаToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -310,10 +309,8 @@
         private ToolStripMenuItem создатьToolStripMenuItem;
         private ToolStripMenuItem редактироватьToolStripMenuItem;
         private ToolStripMenuItem удалитьToolStripMenuItem;
-        private ToolStripMenuItem загрузитьИзБазыToolStripMenuItem;
         private ToolStripMenuItem загрузитьИзXMLToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator2;
-        private ToolStripMenuItem сохранитьВБазуToolStripMenuItem;
         private ToolStripMenuItem сохранитьВXMLToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripMenuItem выходToolStripMenuItem;
@@ -327,5 +324,6 @@
         private ToolStripMenuItem поИздательствуToolStripMenuItem;
         private ToolStripMenuItem aSCToolStripMenuItem2;
         private ToolStripMenuItem dESCToolStripMenuItem2;
+        private ToolStripMenuItem справкаToolStripMenuItem;
     }
 }

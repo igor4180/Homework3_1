@@ -15,6 +15,7 @@ namespace Library
         public int PublishYear { get; set; }
         public int Pages { get; set; }
         public string Publisher { get; set; }
+
         public Book(int id, string name, string author, string genre, int publishYear, int pages, string publisher) 
         { 
             Id = id;
